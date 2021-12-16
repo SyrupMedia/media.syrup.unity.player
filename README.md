@@ -2,7 +2,7 @@
 ### media.syrup.unity.player
 
 This is yet another free and open-source player framework for the 
-[Unity](https://unity.com) game engine. It is targetted towards both 
+[Unity](https://unity.com) game engine. It is targeted towards both 
 professionals and hobbyists, with ease of use and modularity in mind. 
 
 This repository contains a sample Unity project, with pre-made layers,
