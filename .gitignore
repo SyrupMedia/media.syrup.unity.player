@@ -32,6 +32,10 @@
 /[Aa]ssets/Scenes*
 /[Aa]ssets/Resources*
 
+# Forcing BillingMode.json to be ignored
+# !!! Again, comment if you are using this as a temmplate!
+/[Aa]ssets/Resources/BillingMode.json
+
 # Unecessary settings.
 # !!! If you are using this repository as a template, comment these!
 /[Pp]rojectSettings/AudioManager.asset
