@@ -73,51 +73,59 @@ namespace SyrupPlayer
         // Update() is called once per frame.
         private void Update()
         {
-            if (Input.GetButtonDown("Cancel"))
+            if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
             {
-                Cursor.lockState = CursorLockMode.None;
-                lockedMouse = false;
+                return;
             }
 
-            float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-
-            animator.SetFloat("horizontal", horizontal);
-            animator.SetFloat("vertical", vertical);
-
-            Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-            if (direction.magnitude >= 0.1f)
+            if(photonView.IsMine && PhotonNetwork.IsConnected)
             {
-                animator.SetBool("isWalking", true);
-
-                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.eulerAngles.y;
-                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnSmoothing);
-
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-                Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
-            }
-            else
-            {
-                animator.SetBool("isWalking", false);
-            }
-
-            if (applyGravity == true)
-            {
-                // This is the same approach featured in Brackeys' FPS Controller.
-                // https://youtu.be/_QajrabyTJc?t=1132
-                isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
-
-                if (isGrounded && verticalVelocity.y < 0)
+                if (Input.GetButtonDown("Cancel"))
                 {
-                    verticalVelocity.y = -2.5f;
+                    Cursor.lockState = CursorLockMode.None;
+                    lockedMouse = false;
                 }
 
-                verticalVelocity.y += gravity * Time.deltaTime;
+                float horizontal = Input.GetAxis("Horizontal");
+                float vertical = Input.GetAxis("Vertical");
 
-                controller.Move(verticalVelocity * Time.deltaTime); 
+                animator.SetFloat("horizontal", horizontal);
+                animator.SetFloat("vertical", vertical);
+
+                Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+                if (direction.magnitude >= 0.1f)
+                {
+                    animator.SetBool("isWalking", true);
+
+                    float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + mainCamera.eulerAngles.y;
+                    float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnSmoothing);
+
+                    transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                    Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                    controller.Move(moveDirection.normalized * movementSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    animator.SetBool("isWalking", false);
+                }
+
+                if (applyGravity == true)
+                {
+                    // This is the same approach featured in Brackeys' FPS Controller.
+                    // https://youtu.be/_QajrabyTJc?t=1132
+                    isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
+
+                    if (isGrounded && verticalVelocity.y < 0)
+                    {
+                        verticalVelocity.y = -2.5f;
+                    }
+
+                    verticalVelocity.y += gravity * Time.deltaTime;
+
+                    controller.Move(verticalVelocity * Time.deltaTime); 
+                }
             }
         }
 
