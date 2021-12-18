@@ -4,9 +4,11 @@
 
 using UnityEngine;
 
+using Photon.Pun;
+
 namespace SyrupPlayer
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviourPun
     {
         #region Variables
 
