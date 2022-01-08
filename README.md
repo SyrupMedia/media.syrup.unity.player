@@ -13,4 +13,6 @@ alternatively you can import one of the <code>.unitypackage</code> files.
 
 ## Usage
 Official `.unitypackage` files can be found 
-[here](https://github.com/SyrupMedia/media.syrup.unity.player/releases/).
+[here](https://github.com/SyrupMedia/media.syrup.unity.player/releases/)
+or on my [itch.io](https://molasseslover.itch.io/unity-player).
+
