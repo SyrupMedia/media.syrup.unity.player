@@ -1,7 +1,8 @@
 # Unity Player Controller 
 ### media.syrup.unity.player
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D2C20YB)
+[![Ko-Fi](https://img.shields.io/badge/donate-kofi-blue?style=for-the-badge&logo=ko-fi&color=E35B57&logoColor=FFFFFF&labelColor=232323)](https://ko-fi.com/molasses)
+![GitHub Downloads](https://img.shields.io/github/downloads/SyrupMedia/media.syrup.unity.player/total?color=E35B57&logo=github&logoColor=FFFFFF&style=for-the-badge&labelColor=232323)
 
 ## About
 <img src="Resources/Logo.svg" align="left" width="78px"/>
