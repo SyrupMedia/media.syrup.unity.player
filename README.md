@@ -1,6 +1,8 @@
 # Unity Player Controller 
 ### media.syrup.unity.player
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/D1D2C20YB)
+
 ## About
 <img src="Resources/Logo.svg" align="left" width="78px"/>
 This is yet another free and open-source player framework for the 
