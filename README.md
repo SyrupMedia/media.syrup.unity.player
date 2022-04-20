@@ -1,8 +1,12 @@
 # Unity Player Controller 
 ### media.syrup.unity.player
 
+[![Ko-Fi](https://img.shields.io/badge/donate-kofi-blue?style=for-the-badge&logo=ko-fi&color=E35B57&logoColor=FFFFFF&labelColor=232323)](https://ko-fi.com/molasses)
+[![Patreon](https://img.shields.io/badge/donate-patreon-blue?style=for-the-badge&logo=patreon&color=E35B57&logoColor=FFFFFF&labelColor=232323)](https://www.patreon.com/molasseslover)
+![GitHub Downloads](https://img.shields.io/github/downloads/SyrupMedia/media.syrup.unity.player/total?color=E35B57&logo=github&logoColor=FFFFFF&style=for-the-badge&labelColor=232323)
+
 ## About
-<img src="https://user-images.githubusercontent.com/60114762/148658317-933bb606-a83e-4f8a-9da8-a6086c26d4b3.png" align="left" width="78px"/>
+<img src="Resources/Logo.svg" align="left" width="78px"/>
 This is yet another free and open-source player framework for the 
 Unity game engine. It is targeted towards both 
 professionals and hobbyists, with ease of use and modularity in mind. 
