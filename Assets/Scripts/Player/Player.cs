@@ -1,5 +1,5 @@
-// Copyright © 2021 Syrup Media
-// Licensed under VERSION 3 of the GNU GENERAL PUBLIC LICENSE.
+// Copyright © 2022, Maeve "Molasses" Garside
+// Licensed under the MIT license, making this script copyleft. 
 // Check the LICENSE.md file for further information.
 
 using UnityEngine;
@@ -50,7 +50,7 @@ namespace SyrupPlayer
 
         #region Unity Methods
 
-        // Awake is called when the script instance is being loaded.
+        // Awake() is called when the script instance is being loaded.
         private void Awake()
         {
             cameras = GameObject.FindGameObjectsWithTag("MainCamera");
