@@ -22,11 +22,15 @@ public LayerMask groundLayer;
 
 [Header("Graphics")]
 public Animator animator;
+[Tooltip("How far away the player has to be to start their landing animation.")]
+public float landingDistance = 1.0f;
+private bool isLanding;
 
 [Header("Movement")]
 public CharacterController controller;
 
 [Header("Camera")]
+[Tooltip("The main camera; automatically selected on awake.")]
 public Transform mainCamera;
 private GameObject[] cameras;
 
@@ -39,10 +43,22 @@ public bool lockedMouse;
 [Range(1f, 10f)]
 [Min(1f)]
 public float movementSpeed = 5f;
+[Min(1f)]
+public float jumpHeight = 2.5f;
 [Range(0.1f, 0.5f)]
 [Min(0.1f)]
 public float turnSmoothing = 0.1f;
+[Range(0.1f, 0.5f)]
+[Min(0.1f)]
 private float turnVelocity;
+[Range(0.1f, 0.5f)]
+[Min(0.0f)]
+public float coyoteTime = 0.25f;
+private float coyoteTimeCounter;
+[Range(0.1f, 0.5f)]
+[Min(0.0f)]
+public float jumpBufferTime = 0.25f;
+private float jumpBufferCounter;
 
 #endregion
 
@@ -73,6 +89,12 @@ private void Update() {
     float horizontal = Input.GetAxis("Horizontal");
     float vertical = Input.GetAxis("Vertical");
 
+    if (Input.GetButtonDown("Jump")) {
+        jumpBufferCounter = jumpBufferTime;
+    } else {
+        jumpBufferCounter -= Time.deltaTime;
+    }
+
     animator.SetFloat("horizontal", horizontal);
     animator.SetFloat("vertical", vertical);
 
@@ -96,12 +118,36 @@ private void Update() {
         // This is the same approach featured in Brackeys' FPS Controller.
         // https://youtu.be/_QajrabyTJc?t=1132
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
+        isLanding = Physics.CheckSphere(groundCheck.position, landingDistance, groundLayer);
+
+        if (isGrounded) {
+            animator.SetBool("isGrounded", true);
+        } else {
+            animator.SetBool("isGrounded", false);
+        }
+
+        if (isLanding) {
+            animator.SetBool("isLanding", true);
+        } else {
+            animator.SetBool("isLanding", false);
+        }
 
         if (isGrounded && verticalVelocity.y < 0) {
+            coyoteTimeCounter = coyoteTime;
             verticalVelocity.y = -2.5f;
+        } else {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && isGrounded) {
+            
+            verticalVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetTrigger("jump");
+            coyoteTimeCounter = 0f;
         }
 
         verticalVelocity.y += gravity * Time.deltaTime;
+        animator.SetFloat("verticalVelocity", verticalVelocity.y);
 
         controller.Move(verticalVelocity * Time.deltaTime);
     }

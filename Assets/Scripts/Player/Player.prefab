@@ -74,9 +74,17 @@ CharacterController:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8256828184398376770}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
@@ -99,7 +107,8 @@ MonoBehaviour:
   applyGravity: 1
   gravity: -29.43
   groundCheck: {fileID: 2608396680279815232}
-  groundDistance: 0.5
+  groundDistance: 0.25
+  landingDistance: 0.75
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
@@ -108,7 +117,10 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   lockedMouse: 0
   movementSpeed: 5
+  jumpHeight: 2.5
   turnSmoothing: 0.1
+  coyoteTime: 0.25
+  jumpBufferTime: 0.25
 --- !u!1 &8256828184739508198
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,15 +214,24 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8256828184739508198}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
+  serializedVersion: 2
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &9218026421547134425
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,4 +248,4 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
