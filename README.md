@@ -32,13 +32,13 @@ alternatively you can import one of the <code>.unitypackage</code> files.
 
 Absolutely, as long as your project complies with this asset's license.
 
-Is the demo scene included?
+> Is the demo scene included?
 
-> No,  the demo scene is closed-source, as it relies on the X-Bot Mixamo model.
+No,  the demo scene is closed-source, as it relies on the X-Bot Mixamo model.
 
-Will there be updates?
+> Will there be updates?
 
-> Yes, there will be consistent updates to the project. 
+Yes, there will be consistent updates to the project. 
 
 ## Downloading
 Official `.unitypackage` files can be found 
