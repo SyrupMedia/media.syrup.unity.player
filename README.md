@@ -15,7 +15,33 @@ tags, and prefabs. You can merge the provided project with your own, or
 alternatively you can import one of the <code>.unitypackage</code> files. 
 <br clear="left"/>
 
-## Usage
+### Features
+
+- Free and open-source under [the MIT license](LICENSE.md).
+- Movement using the [character controller component](https://docs.unity3d.com/Manual/class-CharacterController.html).
+- Gravity physics with ground layers.
+- Slope and stair behaviour handling.
+- Support for any camera system.
+- Animator controller support.
+- Jump buffering.
+- Coyote time.
+
+### Questions
+Questions
+
+> Can this be used in a commercial project?
+
+Absolutely, as long as your project complies with this asset's license.
+
+Is the demo scene included?
+
+> No,  the demo scene is closed-source, as it relies on the X-Bot Mixamo model.
+
+Will there be updates?
+
+> Yes, there will be consistent updates to the project. 
+
+## Downloading
 Official `.unitypackage` files can be found 
 [here](https://github.com/SyrupMedia/media.syrup.unity.player/releases/)
 or on my [itch.io](https://molasseslover.itch.io/unity-player).
