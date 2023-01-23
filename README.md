@@ -6,7 +6,7 @@
 ![GitHub Downloads](https://img.shields.io/github/downloads/SyrupMedia/media.syrup.unity.player/total?color=E35B57&logo=github&logoColor=FFFFFF&style=for-the-badge&labelColor=232323)
 
 ## About
-<img src="Resources/Logo.svg" align="left" width="78px"/>
+<img src="Source/Icons/Player.svg" align="left" width="78px"/>
 This is yet another free and open-source player framework for the 
 Unity game engine. It is targeted towards both 
 professionals and hobbyists, with ease of use and modularity in mind. 
