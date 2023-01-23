@@ -27,7 +27,6 @@ alternatively you can import one of the <code>.unitypackage</code> files.
 - Coyote time.
 
 ### Questions
-Questions
 
 > Can this be used in a commercial project?
 
